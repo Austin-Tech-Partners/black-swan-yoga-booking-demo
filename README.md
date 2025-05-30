@@ -1,54 +1,90 @@
-# React + TypeScript + Vite
+# Black Swan Yoga Booking Flow
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A mobile-first booking application for Black Swan Yoga studios, designed to provide a seamless and frictionless experience for customers looking to book yoga classes.
 
-Currently, two official plugins are available:
+## Project Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This is a frontend-only MVP that implements a streamlined booking flow for Black Swan Yoga studios. The application focuses on providing an intuitive mobile experience while maintaining all essential booking functionality. The goal is to showcase modern UX/UI and forward-thinking design for a yoga studio booking process.
 
-## Expanding the ESLint configuration
+## Business & UX Context
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **Current Pain Points:**
+  - The existing booking process is cumbersome, with too many clicks, long forms, and a poor mobile experience.
+  - This project aims to demonstrate a vastly improved, user-centric flow.
+- **Target User:**
+  - Focused on new customers and first-time visitors.
+  - Prompts for sign-in at key stages (initial and info capture) to encourage account creation for faster future bookings.
+- **Business Logic:**
+  - No real backend or business rules for this MVP; all data is mocked.
+  - The goal is to demonstrate skillset and design thinking, not to implement production logic.
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## Core Features
+
+### Location-Based Studio Selection
+- Automatically detects user's location and suggests the nearest studio.
+- All studios are listed for manual selection.
+- Studio selection does not affect available classes or instructors in this MVP (mocked backend).
+
+#### Studio List
+- **Austin:** Anderson, Cedar Park, Cesar Chavez, Orchard, Round Rock, Westgate
+- **Dallas:** Bishop, Lovers, Skillman
+- **Denver:** Capitol Hill, South Broadway
+- **Houston:** Fannin, Kirby, White Oak
+- **Phoenix:** Midtown, Old Town, Paradise Valley
+- **San Antonio:** Downtown, Vineyard
+
+### Class Schedule & Filtering
+- Displays upcoming class schedule (mocked data)
+- Intuitive date selection interface
+- Filter options for:
+  - Class types
+  - Instructors
+  - Time slots
+
+### Booking Flow
+1. Class selection
+2. Booking review
+3. Account creation (if new user)
+   - Name
+   - Email
+   - Phone number
+   - Prompts for sign-in at key stages
+4. Donation selection
+   - Minimum: $12
+   - Suggested: $20 (highlighted)
+   - Custom amount option
+   - Option to purchase membership ($88/month, unlimited classes)
+5. Payment processing (mocked)
+   - Secure checkout experience
+   - Credit card information collection
+
+## Technical Stack
+
+- Built with Svelte
+- Mobile-first design approach
+- Mocked backend services for MVP phase
+- Focus on visual polish and best-in-class UX
+
+## Development
+
+```bash
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+# Build for production
+npm run build
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Project Status
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+This is an MVP version focusing on the core booking flow. Backend integration and studio-specific features may be implemented in future iterations.
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+## Getting Started
+
+1. Clone the repository
+2. Install dependencies with `npm install`
+3. Start the development server with `npm run dev`
+4. Access the application at `localhost:5173` (or the port shown in your terminal)
