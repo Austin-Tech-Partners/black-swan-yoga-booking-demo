@@ -1,0 +1,60 @@
+{
+  "studios": [
+    {
+      "id": "s1",
+      "name": "Black Swan Yoga - Downtown",
+      "address": "100 Congress Ave",
+      "city": "Austin",
+      "state": "TX",
+      "zipCode": "78701"
+    },
+    {
+      "id": "s2",
+      "name": "Black Swan Yoga - South Lamar",
+      "address": "4001 S Lamar Blvd",
+      "city": "Austin",
+      "state": "TX",
+      "zipCode": "78704"
+    }
+  ],
+  "teachers": [
+    {
+      "id": "t1",
+      "name": "Sarah Johnson",
+      "bio": "Certified yoga instructor with 10 years of experience in Vinyasa and Power Yoga.",
+      "photoUrl": "https://placekitten.com/200/200"
+    },
+    {
+      "id": "t2",
+      "name": "Michael Chen",
+      "bio": "Specializes in Hot Yoga and Meditation. Teaching for 8 years.",
+      "photoUrl": "https://placekitten.com/201/201"
+    }
+  ],
+  "classes": [
+    {
+      "id": "c1",
+      "name": "Power Flow",
+      "style": "Vinyasa",
+      "teacherId": "t1",
+      "studioId": "s1",
+      "startTime": "2024-03-20T08:00:00",
+      "endTime": "2024-03-20T09:00:00",
+      "heatLevel": 90,
+      "spotsLeft": 15,
+      "maxSpots": 20
+    },
+    {
+      "id": "c2",
+      "name": "Hot Yoga",
+      "style": "Hot",
+      "teacherId": "t2",
+      "studioId": "s2",
+      "startTime": "2024-03-20T10:00:00",
+      "endTime": "2024-03-20T11:00:00",
+      "heatLevel": 95,
+      "spotsLeft": 8,
+      "maxSpots": 15
+    }
+  ]
+} 
