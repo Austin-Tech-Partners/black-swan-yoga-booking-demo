@@ -193,9 +193,9 @@
         </div>
       {/if}
       
-      <div class="search-container">
+      <!-- <div class="search-container">
         <input class="search-box" placeholder="Search locations" />
-      </div>
+      </div> -->
       
       <div bind:this={mapContainer} class="map-container"></div>
       
