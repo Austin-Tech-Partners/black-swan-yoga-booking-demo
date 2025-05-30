@@ -346,8 +346,21 @@ onMount(() => {
     
     <!-- Calendar Modal -->
     {#if showDatePicker}
-      <div class="calendar-modal" on:click={() => showDatePicker = false}>
-        <div class="calendar-content" on:click|stopPropagation>
+      <div 
+        class="calendar-modal" 
+        role="dialog" 
+        aria-modal="true" 
+        aria-label="Date picker"
+        tabindex="-1"
+        on:click={() => showDatePicker = false}
+        on:keydown={(e) => e.key === 'Escape' && (showDatePicker = false)}
+      >
+        <div 
+          class="calendar-content" 
+          role="none"
+          on:click|stopPropagation
+          on:keydown|stopPropagation
+        >
           <div class="calendar-header">
             <button class="nav-btn" on:click={() => navigateMonth(-1)}>
               <ChevronLeft size={20} />
