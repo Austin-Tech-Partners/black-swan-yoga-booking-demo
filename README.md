@@ -60,10 +60,11 @@ This is a frontend-only MVP that implements a streamlined booking flow for Black
 
 ## Technical Stack
 
-- Built with Svelte
+- Built with SvelteKit
 - Mobile-first design approach
 - Mocked backend services for MVP phase
 - Focus on visual polish and best-in-class UX
+- Configured for AWS Amplify deployment with SSR support
 
 ## Development
 
@@ -77,6 +78,54 @@ npm run dev
 # Build for production
 npm run build
 ```
+
+## Deployment
+
+### AWS Amplify Deployment
+
+This project is configured for AWS Amplify hosting with server-side rendering (SSR) support. The deployment uses the Node.js adapter and includes all necessary configuration files.
+
+#### Quick Deploy
+
+1. **Push to GitHub**: Ensure your code is in a GitHub repository
+2. **Create Amplify App**: 
+   - Go to [AWS Amplify Console](https://console.aws.amazon.com/amplify/)
+   - Click "Create new app" > "Host web app"
+   - Connect your GitHub repository
+3. **Configure Build Settings**: The `amplify.yml` file is already configured with the correct build commands
+4. **Deploy**: Amplify will automatically build and deploy your application
+
+#### Build Configuration
+
+The project includes:
+- `amplify.yml` - Build configuration for AWS Amplify
+- `amplify.mjs` - Custom build script for SSR deployment structure
+- `@sveltejs/adapter-node` - Node.js adapter for SvelteKit SSR
+
+#### Environment Variables
+
+If you need to set environment variables:
+1. In the Amplify Console, go to your app
+2. Navigate to "App settings" > "Environment variables"
+3. Add any required environment variables
+4. Redeploy the application
+
+#### Manual Build Test
+
+To test the build process locally:
+
+```bash
+# Build the application
+npm run build
+
+# Run the Amplify build script
+node amplify.mjs
+
+# Check the generated .amplify-hosting directory
+ls -la .amplify-hosting
+```
+
+The build process creates a `.amplify-hosting` directory with the proper structure for Amplify's SSR hosting, including static assets and compute resources.
 
 ## Project Status
 
